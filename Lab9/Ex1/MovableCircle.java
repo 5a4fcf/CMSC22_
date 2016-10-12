@@ -11,7 +11,8 @@ public class MovableCircle extends MovablePoint implements Movable {
 	public String toString(){
 		
 		
-return super.toString() + "\tradius : " + radius
+ "center " + super.toString() + "\tradius : " + radius;
+		
 	public void moveUp(){
 		center.moveUp();
 	}
