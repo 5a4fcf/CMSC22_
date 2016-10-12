@@ -9,7 +9,7 @@ public class MovableCircle extends MovablePoint implements Movable {
 		this.radius = radius;
 	}
 	public String toString(){
-                return super.toString() + "\tradius : " + radius;
+                return "center "  + super.toString() + "\tradius : " + radius;
         }		
 
 		
