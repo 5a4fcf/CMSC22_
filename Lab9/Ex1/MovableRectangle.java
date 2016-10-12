@@ -8,9 +8,9 @@ public class MovableRectangle implements Movable {
 		bottomRight = new MovablePoint(x2,y2,xSpeed,ySpeed);
 	}
 	public String toString(){
-		return "point tl : " + topLeft.x + " , " + topLeft.y + "\t\tpt. br : " + bottomRight.x + " , " + bottomRight.y ;
-	}
-	
+		 return "topleft " + topLeft.toString() + "\tbottomright " + bottomRight.toString();
+	} 
+		
 	public void moveUp(){
 		topLeft.moveUp();
 		bottomRight.moveUp();
