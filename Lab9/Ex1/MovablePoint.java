@@ -9,8 +9,8 @@ public class MovablePoint implements Movable {
 		this.ySpeed = ySpeed;
 	}
 	public String toString(){
-		return "point pt: " + x + " , " + y;
-	}
+                return "point: (" + x + " , " + y +")";
+        }
 	public void moveUp(){
 		y-=ySpeed;
 	}
