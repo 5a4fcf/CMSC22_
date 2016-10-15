@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by next on 10/15/2016.
+ * Created by Arsolon,Cugal,Desabille on 10/15/2016.
  */
 public class TestStudentList extends StudentList{
     public static void main(String[] args){
@@ -13,10 +13,10 @@ public class TestStudentList extends StudentList{
         StudentList sl = new StudentList(stude,file);
         System.out.println("Menu:\n\t1. Add\n\t2. Search\n\t3. Delete\n\t4. Save\n\t5. Exit");
         Scanner sc = new Scanner(System.in);
-
-        while(true){
-
-            switch(sc.nextInt()) {
+        int n = 0;
+        while(n!=5){
+            n = sc.nextInt();
+            switch(n) {
                 case 1:
                     sl.append();
                     break;
