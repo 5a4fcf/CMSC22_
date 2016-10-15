@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by next on 10/15/2016.
+ * Created by Arsolon,Cugal,Desabille on 10/15/2016.
  */
 public class StudentList extends Student{
     private List<Student> students;
@@ -19,14 +19,12 @@ public class StudentList extends Student{
     public StudentList(){
         students = new ArrayList<>();
         createFile();
-
     }
 
 
     public void createFile() {
         file = new File("students.txt");
         try{
-
             if(file.createNewFile()){
                 System.out.println("File is created!");
             }else{
