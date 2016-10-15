@@ -18,13 +18,14 @@ public class StudentList extends Student{
 
     public StudentList(){
         students = new ArrayList<>();
-        createFile();
+        createFile("students.txt");
     }
 
 
-    public void createFile() {
-        file = new File("students.txt");
+    public void createFile(String filename) {
+        file = new File(filename);
         try{
+
             if(file.createNewFile()){
                 System.out.println("File is created!");
             }else{
@@ -65,7 +66,6 @@ public class StudentList extends Student{
     public void writeToFile(Student s){
         BufferedWriter bw = null;
         try{
-
             bw = new BufferedWriter(new FileWriter(file,true));
             bw.write(s.toString());
             bw.close();
@@ -82,8 +82,8 @@ public class StudentList extends Student{
     }
 
     public void append(){
-        createFile();
-        clearScreen();
+        createFile("students.txt");
+        clearScreen(file);
         Student s = new Student();
 
         System.out.println("Please enter Student Information:");
@@ -153,7 +153,7 @@ public class StudentList extends Student{
             for(Student s: students){
                 if(s.getStudentNumber().equals(sn)){
                     students.remove(s);
-                    clearScreen();
+                    clearScreen(file);
                     display();
                     System.out.println("Student has been deleted");
                     break;
@@ -165,10 +165,29 @@ public class StudentList extends Student{
     }
 
     public void save(){
-
+        createFile("db.txt");
+        clearScreen(file);
+        BufferedWriter bw = null;
+        try{
+            File saved = new File("db.txt");
+            bw = new BufferedWriter(new FileWriter(saved,true));
+            for(Student s : students) {
+                bw.write(s.toString());
+            }
+            bw.close();
+            System.out.println("DONE SAVING");
+        }catch(IOException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (bw != null) bw.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
-    public void clearScreen(){
+    public void clearScreen(File file){
         FileWriter f = null;
         try{
             f = new FileWriter(file);
