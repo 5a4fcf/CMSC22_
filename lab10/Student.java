@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Created by next on 10/15/2016.
+ * Created by Arsolon,Cugal,Desabille on 10/15/2016.
  */
 public class Student {
     private String studentNumber;
