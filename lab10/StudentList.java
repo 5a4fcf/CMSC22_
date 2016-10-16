@@ -68,6 +68,7 @@ public class StudentList extends Student{
         try{
             bw = new BufferedWriter(new FileWriter(file,true));
             bw.write(s.toString());
+            bw.newline();
             bw.close();
             System.out.println("DONE");
         }catch(IOException e){
