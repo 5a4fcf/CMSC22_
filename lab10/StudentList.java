@@ -39,12 +39,10 @@ public class StudentList extends Student{
 
     public boolean alreadyExists(String sn){
         BufferedReader br = null;
-
+        if(students.isEmpty()){return false;}  //updated
         try {
             String sCurrentLine;
-
             br = new BufferedReader(new FileReader(file));
-
             while ((sCurrentLine = br.readLine()) != null) {
                 if(sCurrentLine.equals("\tStudent Number: " + sn)){
                     return true;
@@ -68,7 +66,7 @@ public class StudentList extends Student{
         try{
             bw = new BufferedWriter(new FileWriter(file,true));
             bw.write(s.toString());
-            bw.newline();
+            bw.newLine();
             bw.close();
             System.out.println("DONE");
         }catch(IOException e){
