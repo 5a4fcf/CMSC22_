@@ -25,7 +25,6 @@ public class StudentList extends Student{
     public void createFile(String filename) {
         file = new File(filename);
         try{
-
             if(file.createNewFile()){
                 System.out.println("File is created!");
             }else{
