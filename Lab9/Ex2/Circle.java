@@ -13,7 +13,6 @@ public class Circle implements GeometricObject {
 	public double getArea(){
 		return Math.PI*Math.pow(radius, 2);
 	}
-	
 	public String toString(){
 		return "A circle with radius : " + radius + " ,area: " + getArea() + " , perimeter: " + getPerimeter();
 	}
