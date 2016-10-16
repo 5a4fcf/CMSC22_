@@ -83,14 +83,18 @@ public class StudentList extends Student{
 
     public void append(){
         createFile("students.txt");
-        clearScreen(file);
+        //clearScreen(file);
         Student s = new Student();
 
         System.out.println("Please enter Student Information:");
         Scanner scan = new Scanner(System.in);
         System.out.println("Student Number:");
         String sn = scan.next();
-        if(!alreadyExists(sn)){
+        if(alreadyExists(sn)){
+            System.out.println("Student is already on the list!");
+        }
+        else{
+            clearScreen(file);      //update : moved clearScreen()
             int ctr = 1 ;
             while(ctr<=6){
                 switch(ctr){
@@ -123,9 +127,6 @@ public class StudentList extends Student{
             }
             students.add(s);
             display();
-
-        }else{
-            System.out.println("Student is already on the list!");
         }
     }
 
